@@ -18,6 +18,7 @@ Package: nautilus-pdf-converter
 Architecture: any
 Depends: ${shlibs:Depends},
 	${misc:Depends},
+    ghostscript
 Recommends: nautilus (>= 3.0.0)
 Description: nautilus extension to mass resize PDF/PS/EPS files
  This package adds a "Resize PDF/PS/EPS..." menu item to
