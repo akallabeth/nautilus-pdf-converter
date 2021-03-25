@@ -1,0 +1,26 @@
+Source: nautilus-pdf-converter
+Section: gnome
+Priority: optional
+Maintainer: Debian QA Group <packages@qa.debian.org>
+Homepage: http://git.gnome.org/browse/nautilus-image-converter/
+Vcs-Svn: svn://svn.debian.org/svn/collab-maint/deb-maint/nautilus-image-converter/trunk/
+Vcs-Browser: http://svn.debian.org/wsvn/collab-maint/deb-maint/nautilus-image-converter/trunk/
+Build-Depends: 	debhelper (>= 7.0.50~), 
+		cmake (>= 3.5.0),
+        dpkg-dev,
+		pkg-config, 
+		libnautilus-extension-dev (>= 3.0.0),
+ 		libgtk-3-dev (>= 3.0.0), 
+		libglib2.0-dev (>= 2.28.0)
+Standards-Version: 3.9.2
+
+Package: nautilus-pdf-converter
+Architecture: any
+Depends: ${shlibs:Depends},
+	${misc:Depends},
+Recommends: nautilus (>= 3.0.0)
+Description: nautilus extension to mass resize PDF/PS/EPS files
+ This package adds a "Resize PDF/PS/EPS..." menu item to
+ the context menu of all PDF/PS/EPS files. This creates a new
+ version of the file with '.ebook.<ext>' attached and quality
+ adjusted to ghostscript /ebook switch
