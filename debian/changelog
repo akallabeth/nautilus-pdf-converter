@@ -1,5 +1,5 @@
-nautilus-pdf-converter (1.0.0) UNRELEASED; urgency=medium
+nautilus-pdf-converter (1.0.0) unstable; urgency=medium
 
   * Initial release.
 
- -- akallabeth <akallabeth@posteo.net>  Thu, 25 Mar 2021 12:10:29 +0100
+ -- akallabeth <akallabeth@posteo.net>  Wed, 18 Jan 2023 00:02:45 +0100
