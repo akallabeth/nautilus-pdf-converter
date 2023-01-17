@@ -3,6 +3,7 @@ Add an action to the Nautilus context-menu to resize pdf/ps/eps/...
 to the ebook compatible pdf format
 
 Author: Armin Novak
+License: GPL-3
 """
 
 import os
