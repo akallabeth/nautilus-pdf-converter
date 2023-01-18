@@ -6,14 +6,13 @@ License: GPL-3
 """
 
 import pyperclip
-from urllib.parse import urlparse, unquote
 from gi.repository import GObject, Nautilus
 
 class CopyAsFullPathMenuProvider(GObject.GObject, Nautilus.MenuProvider):
     def convert(self, menu, files):
         file_list = []
         for file in files:
-            file_path = unquote(urlparse(file.get_uri()).path)
+            file_path = file.get_location().get_path()
             file_list.append(file_path)
         pyperclip.copy('\n'.join(file_list))
 

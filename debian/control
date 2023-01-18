@@ -30,7 +30,6 @@ Depends:
  ${misc:Depends},
  python3,
  python3-nautilus,
- python3-urllib3,
  python3-pyperclip
 Recommends: nautilus (>= 3.0.0)
 Description: nautilus extension to copy full path to clipboard 
@@ -41,7 +40,6 @@ Depends:
  ${misc:Depends},
  python3,
  python3-nautilus,
- python3-urllib3,
  ghostscript
 Recommends: nautilus (>= 3.0.0)
 Description: nautilus extension to mass resize PDF/PS/EPS files
