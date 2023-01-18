@@ -1,27 +1,26 @@
 """
-Add an action to the Nautilus context-menu to copy full file path 
+Add an action to the Nautilus context-menu to copy uri to clipboard 
 
 Author: Armin Novak
 License: GPL-3
 """
 
 import pyperclip
-from urllib.parse import urlparse, unquote
 from gi.repository import GObject, Nautilus
 
-class CopyAsFullPathMenuProvider(GObject.GObject, Nautilus.MenuProvider):
+class CopyAsUriMenuProvider(GObject.GObject, Nautilus.MenuProvider):
     def convert(self, menu, files):
         file_list = []
         for file in files:
-            file_path = unquote(urlparse(file.get_uri()).path)
+            file_path = file.get_uri()
             file_list.append(file_path)
         pyperclip.copy('\n'.join(file_list))
 
 
     def get_file_items(self, window, files):
         menu_item = Nautilus.MenuItem(
-                        name="copy as path",
-                        label="Copy path")
+                        name="Copy as URI",
+                        label="Copy URI")
 
         menu_item.connect('activate', self.convert, files)
 
