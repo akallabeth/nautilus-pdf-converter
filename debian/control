@@ -14,6 +14,26 @@ Homepage: https://github.com/akallabeth/nautilus-pdf-converter
 Vcs-Git: https://github.com/akallabeth/nautilus-pdf-converter.git
 Vcs-Browser: https://github.com/akallabeth/nautilus-pdf-converter
 
+Package: nautilus-copy-as-uri
+Architecture: all
+Depends: 
+ ${misc:Depends},
+ python3,
+ python3-nautilus,
+ python3-pyperclip
+Recommends: nautilus (>= 3.0.0)
+Description: nautilus extension to copy uri to clipboard 
+
+Package: nautilus-copy-as-path
+Architecture: all
+Depends: 
+ ${misc:Depends},
+ python3,
+ python3-nautilus,
+ python3-pyperclip
+Recommends: nautilus (>= 3.0.0)
+Description: nautilus extension to copy full path to clipboard 
+
 Package: nautilus-pdf-converter
 Architecture: all
 Depends: 
