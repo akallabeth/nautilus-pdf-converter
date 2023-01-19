@@ -1,1 +1,2 @@
 nautilus-pdf-converter.py /usr/share/nautilus-python/extensions/
+locales/de/LC_MESSAGES/nautilus-pdf-converter.mo /usr/share/locale/de/LC_MESSAGES/
