@@ -7,7 +7,6 @@ License: GPL-3
 """
 
 import os
-from urllib.parse import urlparse, unquote
 from gi.repository import GObject, Nautilus
 
 class ResizeForEbookPDFMenuProvider(GObject.GObject, Nautilus.MenuProvider):
@@ -15,7 +14,7 @@ class ResizeForEbookPDFMenuProvider(GObject.GObject, Nautilus.MenuProvider):
 
     def convert(self, menu, files):
         for file in files:
-            file_path = unquote(urlparse(file.get_uri()).path)
+            file_path = file.get_location().get_path()
             file_split = os.path.splitext(file_path)
             file_base = file_split[0]
 
