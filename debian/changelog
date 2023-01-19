@@ -1,3 +1,9 @@
+nautilus-pdf-converter (1.0.4) unstable; urgency=medium
+
+  * added german translations 
+
+ -- akallabeth <akallabeth@posteo.net>  Thu, 19 Jan 2023 21:05:43 +0100
+
 nautilus-pdf-converter (1.0.3) unstable; urgency=medium
 
   * fix path for pdf-converter 

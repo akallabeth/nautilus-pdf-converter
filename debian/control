@@ -5,7 +5,8 @@ Maintainer: akallabeth <akallabeth@posteo.net>
 Uploaders:
  akallabeth <akallabeth@posteo.net>
 Build-Depends:
- debhelper-compat (= 13), 
+ debhelper-compat (= 13),
+ gettext, 
  python3,
  python3-nautilus,
  dh-sequence-python3
@@ -18,6 +19,7 @@ Package: nautilus-copy-as-uri
 Architecture: all
 Depends: 
  ${misc:Depends},
+ gettext, 
  python3,
  python3-nautilus,
  python3-pyperclip
@@ -28,6 +30,7 @@ Package: nautilus-copy-as-path
 Architecture: all
 Depends: 
  ${misc:Depends},
+ gettext, 
  python3,
  python3-nautilus,
  python3-pyperclip
@@ -38,6 +41,7 @@ Package: nautilus-pdf-converter
 Architecture: all
 Depends: 
  ${misc:Depends},
+ gettext, 
  python3,
  python3-nautilus,
  ghostscript

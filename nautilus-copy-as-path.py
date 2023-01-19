@@ -5,10 +5,17 @@ Author: Armin Novak
 License: GPL-3
 """
 
+import os
+import gettext
 import pyperclip
 from gi.repository import GObject, Nautilus
 
 class CopyAsFullPathMenuProvider(GObject.GObject, Nautilus.MenuProvider):
+    def translate(self):
+        f = os.path.basename(__file__)
+        name, ext = os.path.splitext(f)
+        gettext.install(name)
+
     def convert(self, menu, files):
         file_list = []
         for file in files:
@@ -18,9 +25,10 @@ class CopyAsFullPathMenuProvider(GObject.GObject, Nautilus.MenuProvider):
 
 
     def get_file_items(self, window, files):
+        self.translate()
         menu_item = Nautilus.MenuItem(
-                        name="copy as path",
-                        label="Copy path")
+                        name="copy-as-path",
+                        label=_("Copy as path"))
 
         menu_item.connect('activate', self.convert, files)
 
