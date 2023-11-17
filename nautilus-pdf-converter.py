@@ -36,7 +36,10 @@ class ResizeForEbookPDFMenuProvider(GObject.GObject, Nautilus.MenuProvider):
             command += str(file_new) + '\" \"' + str(file_path) + '\"'
             os.system(command)
 
-    def get_file_items(self, window, files):
+    def get_file_items(self, *args):
+        files = args[-1]
+        if len(files) < 1:
+            return
         self.translate()
         for file in files:
             if file.get_mime_type() not in self.VALID_MIMETYPES:

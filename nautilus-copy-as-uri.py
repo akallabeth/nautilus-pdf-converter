@@ -1,5 +1,5 @@
 """
-Add an action to the Nautilus context-menu to copy uri to clipboard 
+Add an action to the Nautilus context-menu to copy uri to clipboard
 
 Author: Armin Novak
 License: GPL-3
@@ -24,7 +24,10 @@ class CopyAsUriMenuProvider(GObject.GObject, Nautilus.MenuProvider):
         pyperclip.copy('\n'.join(file_list))
 
 
-    def get_file_items(self, window, files):
+    def get_file_items(self, *args):
+        files = args[-1]
+        if len(files) < 1:
+            return
         self.translate()
         menu_item = Nautilus.MenuItem(
                         name="copy-as-uri",

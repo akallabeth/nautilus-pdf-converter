@@ -1,5 +1,5 @@
 """
-Add an action to the Nautilus context-menu to copy full file path 
+Add an action to the Nautilus context-menu to copy full file path
 
 Author: Armin Novak
 License: GPL-3
@@ -8,6 +8,9 @@ License: GPL-3
 import os
 import gettext
 import pyperclip
+from gi import require_version
+
+require_version('Gtk', '4.0')
 from gi.repository import GObject, Nautilus
 
 class CopyAsFullPathMenuProvider(GObject.GObject, Nautilus.MenuProvider):
@@ -24,7 +27,10 @@ class CopyAsFullPathMenuProvider(GObject.GObject, Nautilus.MenuProvider):
         pyperclip.copy('\n'.join(file_list))
 
 
-    def get_file_items(self, window, files):
+    def get_file_items(self, *args):
+        files = args[-1]
+        if len(files) < 1:
+            return
         self.translate()
         menu_item = Nautilus.MenuItem(
                         name="copy-as-path",
